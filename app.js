@@ -64,7 +64,7 @@ app.get('/', function (req, res) {
 //  auth starts from here
 app.get('/api/auth/login', auth.login);
 app.post('/api/auth/register', auth.register);
-app.get('/api/auth/verify', auth.verify);
+app.get('/api/auth/forgotpassword', auth.forgotpassword);
 //  coupons starts from here
 app.get('/api/coupons/allCoupons', coupons.allCoupons);
 app.listen(port, function () {

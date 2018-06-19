@@ -87,9 +87,27 @@ exports.register = function (req, res) {
         console.log("we caught an exception ", ex);
     }
 }
-exports.verify = function (req, res) {
+exports.forgotpassword = function (req, res) {
     try {
-        console.log(req);
+        var requestParams = {};
+        req.body.hasOwnProperty('reg_email') ? requestParams = req.body : req.params.hasOwnProperty('reg_email') ? requestParams = req.params : req.query.hasOwnProperty('reg_email') ? requestParams = req.query : requestParams = {}
+        var reg_email = requestParams.reg_email;
+        req.getConnection(function (err, connection){
+            if (err) {
+                console.log("SQL Connection: ", err);
+            } else {
+                connection.query('select * from registration where reg_email = ?', [reg_email], function(err, result){
+                    if(result.length == 0) {
+                        res.json({
+                            "code": codes.messageCodes.Error,
+                            "message": "This user does not exist"
+                        });
+                    } else {
+
+                    }
+                });
+            }
+        });
 
     }
     catch (ex) {
