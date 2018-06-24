@@ -118,14 +118,7 @@ INSERT INTO `order_details` (`order_detail_id`, `order_id`, `product_id`, `produ
 -- Table structure for table `registration`
 --
 
-CREATE TABLE IF NOT EXISTS `registration` (
-`reg_id` int(11) NOT NULL,
-  `reg_username` varchar(255) NOT NULL,
-  `reg_password` varchar(255) NOT NULL,
-  `reg_email` varchar(255) NOT NULL,
-  `reg_reset_code` varchar(255) DEFAULT NULL,
-  `tiimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `registration` (`reg_id` int(11) NOT NULL,`reg_username` varchar(255) NOT NULL,`reg_password` varchar(255) NOT NULL,`reg_email` varchar(255) NOT NULL,`reg_reset_code` varchar(255) DEFAULT NULL,`tiimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `registration`
