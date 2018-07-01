@@ -57,6 +57,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(path.join(__dirname, 'public/dist')));
 const auth = require('./routes/auth');
+const licencing = require('./routes/licencing');
 const coupons = require('./routes/coupons');
 app.get('/', function (req, res) {
     res.render('index');
@@ -67,6 +68,8 @@ app.post('/api/auth/register', auth.register);
 app.get('/api/auth/forgotpassword', auth.forgotpassword);
 //  coupons starts from here
 app.get('/api/coupons/allCoupons', coupons.allCoupons);
+app.get('/api/licence/add', licencing.generateLicence);
+app.get('/api/licence/getLicence', licencing.getLicence);
 app.listen(port, function () {
     console.log('This billing application has been running on ' + port);
 });

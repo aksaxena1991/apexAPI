@@ -31,7 +31,7 @@ exports.login = function (req, res) {
                 });
             }
         });
-        // console.log(req.session.id, req.session);
+
     }
     catch (ex) {
         console.log("we caught an exception ", ex);
