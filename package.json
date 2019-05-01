@@ -4,8 +4,8 @@
   "description": "Billing application",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node your-script.js"
+    
+    "start": "node ./bin/www"
   },
   "author": "Anubhav Saxena",
   "license": "ISC",
